@@ -20,12 +20,25 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden; /* Important: prevents double scrolling */
+        }
+
+        body {
+            display: flex;
+            justify-content: center; /* centers the PDF */
+            background: white;       /* clean look */
+        }
+
+        .pdf-wrapper {
+            width: 100%;
+            max-width: 1200px;   /* adjust this width (book-like reading size) */
+            padding: 20px 40px;  /* white margins left/right */
+            box-sizing: border-box;
         }
 
         .pdf-container {
-            height: 100%;
             width: 100%;
+            height: calc(100vh - 40px); /* full height minus padding */
+            overflow: auto;             /* allows scrolling in Safari */
         }
 
         .pdf-container object {
@@ -37,12 +50,14 @@
 </head>
 
 <body>
-    <div class="pdf-container">
-        <object data="heavenlyLines.pdf" type="application/pdf">
-            <p>Your browser cannot display PDFs.
-               <a href="heavenlyLines.pdf">Click here to download the file.</a>
-            </p>
-        </object>
+    <div class="pdf-wrapper">
+        <div class="pdf-container">
+            <object data="heavenlyLines.pdf" type="application/pdf">
+                <p>Your browser cannot display PDFs.
+                    <a href="heavenlyLines.pdf">Click here to download the file.</a>
+                </p>
+            </object>
+        </div>
     </div>
 </body>
 </html>
