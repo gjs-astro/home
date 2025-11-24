@@ -14,10 +14,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Heavenly Lines</title>
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Important: prevents double scrolling */
+        }
+
+        .pdf-container {
+            height: 100%;
+            width: 100%;
+        }
+
+        .pdf-container object {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="container">
-        <object data="heavenlyLines.pdf" type="application/pdf" width="100%" height="100vh">
+    <div class="pdf-container">
+        <object data="heavenlyLines.pdf" type="application/pdf">
             <p>Your browser cannot display PDFs.
                <a href="heavenlyLines.pdf">Click here to download the file.</a>
             </p>
